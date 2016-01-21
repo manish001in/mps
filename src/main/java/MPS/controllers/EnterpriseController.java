@@ -21,8 +21,8 @@ public class EnterpriseController {
     @Autowired
     private EnterprisesRepository enterpriserepo;
 
-    @RequestMapping(value = "/create")
-    @ResponseBody
+
+  /*  @ResponseBody
     public String create(String entp, String contact) {
         Enterprises enterprise = null;
         try {
@@ -32,13 +32,12 @@ public class EnterpriseController {
             return "Error creating the user: " + ex.toString();
         }
         return "User succesfully created! (id = " + enterprise.getId() + ")";
-    }
-/*
-    @RequestMapping(method = RequestMethod.POST)
+    }*/
+    @RequestMapping(value="/create" ,method = RequestMethod.POST)
     Enterprises add(@RequestBody Enterprises enterprise) {
         return enterpriserepo.save(enterprise);
     }
-*/
+
 
     @RequestMapping(value = "/view")
     @ResponseBody
@@ -47,12 +46,35 @@ public class EnterpriseController {
         return enterprises;
     }
 
-    
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
+    Enterprises update(@PathVariable long id, @RequestBody Enterprises enterprise) {
+        enterprise.setId(id);
+        enterprise.setModifiedDate();
+        return enterpriserepo.save(enterprise);
 
+    }
+
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    void delete(@PathVariable Long id) {
+        enterpriserepo.delete(id);
+    }
 
 
 }
 /*
+
+@RequestMapping(value = "/delete")
+    @ResponseBody
+    public String delete(long id) {
+        try {
+            Enterprises enterprise = new Enterprises(id);
+            enterpriserepo.delete(enterprise);
+        } catch (Exception ex) {
+            return "Error deleting the user: " + ex.toString();
+        }
+        return "User successfully deleted!";
+    }
+
 
     @RequestMapping(value = "/{sort}/{size}/{page}", method = RequestMethod.GET)
     Page<Book> list(@PathVariable String sort, @PathVariable Integer size, @PathVariable Integer page) {

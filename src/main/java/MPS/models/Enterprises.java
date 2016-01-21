@@ -17,7 +17,7 @@ public class Enterprises implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable=false, unique=true)
-    private Long id;
+    private long id;
 
     @Column(name="EntpName")
     private String entpName;
@@ -42,7 +42,7 @@ public class Enterprises implements Serializable {
 
     public Enterprises() { }
 
-    public Enterprises(Long id) {
+    public Enterprises(long id) {
         this.id = id;
     }
 
@@ -54,11 +54,11 @@ public class Enterprises implements Serializable {
 
     // Getter and setter methods
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long value) {
+    public void setId(long value) {
         this.id = value;
     }
 
