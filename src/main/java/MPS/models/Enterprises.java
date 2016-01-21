@@ -1,14 +1,10 @@
 package MPS.models;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Date;
 /**
  * Created by manish.rastogi on 20/1/16.
  */
@@ -30,10 +26,10 @@ public class Enterprises implements Serializable {
     private String contactPerson;
 
     @Column(name="CreatedDate", nullable=false)
-    private Instant createdDate;
+    private Date createdDate;
 
     @Column(name="ModifiedDate")
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     @OneToMany(orphanRemoval=true, cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     @JoinColumn(name="candidate_id", nullable=false)
@@ -46,7 +42,7 @@ public class Enterprises implements Serializable {
 
     public Enterprises() { }
 
-    public Enterprises(long id) {
+    public Enterprises(Long id) {
         this.id = id;
     }
 
@@ -58,11 +54,11 @@ public class Enterprises implements Serializable {
 
     // Getter and setter methods
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long value) {
+    public void setId(Long value) {
         this.id = value;
     }
 
@@ -82,20 +78,20 @@ public class Enterprises implements Serializable {
         this.contactPerson = value;
     }
 
-    public Instant getCreatedDate() { return createdDate; }
+    public Date getCreatedDate() { return createdDate; }
 
     public void setCreatedDate() {
-        this.createdDate = createdDate.now();
+        this.createdDate = new Date();
     }
 
-    public Instant getModifiedDate() { return modifiedDate; }
+    public Date getModifiedDate() { return modifiedDate; }
 
     public void setModifiedDate() {
-        this.modifiedDate = modifiedDate.now();
+        this.modifiedDate = new Date();
     }
 
 
-
+}
 
 
 
@@ -112,4 +108,4 @@ public class Enterprises implements Serializable {
     @Getter
     @Setter
     private List<SecondChild> secondChild = new ArrayList<>();*/
-}
+

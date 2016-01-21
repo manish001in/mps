@@ -2,7 +2,7 @@ package MPS.models;
 
 
 import javax.persistence.*;
-import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 
 
@@ -13,6 +13,7 @@ import java.util.List;
 @Entity
 @Table(name="Appliance")
 public class Appliance {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable=false, unique=true)
@@ -31,10 +32,10 @@ public class Appliance {
     private String param3;
 
     @Column(name="CreatedDate", nullable=false)
-    private Instant createdDate;
+    private Date createdDate;
 
     @Column(name="ModifiedDate")
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     @ManyToOne
     @JoinColumn(name="Enterprises_id", referencedColumnName = "id")
@@ -51,13 +52,12 @@ public class Appliance {
         this.id = id;
     }
 
-    public Appliance(String AppName, String param1, String param2, String param3, Instant createdDate, Instant modifiedDate) {
+    public Appliance(String AppName, String param1, String param2, String param3) {
         this.AppName = AppName;
         this.param1 = param1;
         this.param2 = param2;
         this.param3 = param3;
-        this.createdDate = createdDate;
-        this.modifiedDate = modifiedDate;
+        this.setCreatedDate();
     }
 
     // Getter and setter methods
@@ -102,18 +102,17 @@ public class Appliance {
         this.param3 = value;
     }
 
-    public Instant getCreatedDate() { return createdDate; }
+    public Date getCreatedDate() { return createdDate; }
 
     public void setCreatedDate() {
-        this.createdDate = createdDate.now();
+        this.createdDate = new Date();
     }
 
-    public Instant getModifiedDate() { return modifiedDate; }
+    public Date getModifiedDate() { return modifiedDate; }
 
     public void setModifiedDate() {
-        this.modifiedDate = modifiedDate.now();
+        this.modifiedDate = new Date();
     }
-
 }
 /*
 

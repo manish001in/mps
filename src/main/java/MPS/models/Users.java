@@ -1,9 +1,8 @@
 package MPS.models;
 
 import javax.persistence.*;
-import java.time.Instant;
+import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by manish.rastogi on 20/1/16.
@@ -25,12 +24,11 @@ public class Users {
     @Column(name="Passcode")
     private String passcode;
 
-
     @Column(name="CreatedDate", nullable=false)
-    private Instant createdDate;
+    private Date createdDate;
 
     @Column(name="ModifiedDate")
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     @ManyToOne
     @JoinColumn(name="Enterprises_id", referencedColumnName = "id")
@@ -39,22 +37,22 @@ public class Users {
 
     public Users() { }
 
-    public Users(long id) {
+    public Users(Long id) {
         this.id = id;
     }
 
-    public Users(String name, String passcode, Instant createdDate, Instant modifiedDate) {
+    public Users(String name, String passcode) {
         this.name = name;
         this.passcode = passcode;
-        this.createdDate = createdDate;
-        this.modifiedDate = modifiedDate;
+        this.setCreatedDate();
+
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long value) {
+    public void setId(Long value) {
         this.id = value;
     }
 
@@ -75,17 +73,16 @@ public class Users {
         this.passcode = value;
     }
 
-    public Instant getCreatedDate() { return createdDate; }
+    public Date getCreatedDate() { return createdDate; }
 
     public void setCreatedDate() {
-        this.createdDate = createdDate.now();
+        this.createdDate = new Date();
     }
 
-    public Instant getModifiedDate() { return modifiedDate; }
+    public Date getModifiedDate() { return modifiedDate; }
 
     public void setModifiedDate() {
-        this.modifiedDate = modifiedDate.now();
+        this.modifiedDate = new Date();
     }
-
 
 }

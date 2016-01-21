@@ -46,9 +46,11 @@ public class EnterpriseController {
             List enterprises = enterpriserepo.findAll();
         return enterprises;
     }
-/*    List<Enterprises> list() {
-        return
-    }*/
+
+    
+
+
+
 }
 /*
 
