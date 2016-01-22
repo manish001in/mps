@@ -1,7 +1,11 @@
 package MPS.models;
 
+import org.springframework.data.jpa.repository.*;
+
 import javax.persistence.*;
+import javax.persistence.Temporal;
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
@@ -25,19 +29,18 @@ public class Enterprises implements Serializable {
     @Column(name="ContactPerson")
     private String contactPerson;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name="CreatedDate", nullable=false)
-    private Date createdDate;
+    private Timestamp createdDate;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name="ModifiedDate")
-    private Date modifiedDate;
+    private Timestamp modifiedDate;
 
-    @OneToMany(orphanRemoval=true, cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    @JoinColumn(name="candidate_id", nullable=false)
-
+    @OneToMany(mappedBy = "Enterprises" ,orphanRemoval=true, cascade = {CascadeType.ALL})
     public List<Appliance> appliances = new ArrayList<>();
 
-    @OneToMany(orphanRemoval=true, cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    @JoinColumn(name="candidate_id", nullable=false)
+    @OneToMany(mappedBy = "Enterprises" ,orphanRemoval=true, cascade = {CascadeType.ALL})
     public List<Users> users = new ArrayList<>();
 
     public Enterprises() { }
@@ -80,32 +83,34 @@ public class Enterprises implements Serializable {
 
     public Date getCreatedDate() { return createdDate; }
 
+    @PrePersist
     public void setCreatedDate() {
-        this.createdDate = new Date();
+        this.createdDate = new Timestamp(System.currentTimeMillis());
     }
 
     public Date getModifiedDate() { return modifiedDate; }
 
+    @PreUpdate
     public void setModifiedDate() {
-        this.modifiedDate = new Date();
+        this.modifiedDate = new Timestamp(System.currentTimeMillis());
     }
 
+    public List<Users> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<Users> users) {
+        this.users = users;
+    }
+
+    public List<Appliance> getAppliances() {
+        return appliances;
+    }
+
+    public void setAppliances(List<Appliance> appliances) {
+        this.appliances = appliances;
+    }
 
 }
 
-
-
-/*
-    @OneToMany(orphanRemoval = true, cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "candidacy_id", nullable = false)
-    @Getter
-    @Setter
-    private List<FirstChild> firstChild = new ArrayList<>();
-
-
-    @OneToMany(orphanRemoval = true, cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "candidacy_id", nullable = false)
-    @Getter
-    @Setter
-    private List<SecondChild> secondChild = new ArrayList<>();*/
 

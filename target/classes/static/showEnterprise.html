@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+    <title>List-Enterprises</title>
+</head>
+
+<table class="list" border="1" cellspacing="5" cellpadding="5">
+    <thead>
+    <tr>
+        <th colspan="7">Enterprises</th>
+    </tr>
+    </thead>
+    <tr>
+        <th><a>Id</a></th>
+        <th><a>Enterprise Name</a></th>
+        <th><a>Contact Person</a></th>
+        <th><a>Created Date</a></th>
+        <th colspan="2"></th>
+        <th colspan="1"></th>
+    </tr>
+    <tr ng-repeat="enterprise in enterprises.content">
+        <td>{{enterprise.id}}</td>
+        <td>{{enterprise.name}}</td>
+        <td>{{enterprise.contact}}</td>
+        <td>{{enterprise.created}}</td>
+        <td><button ng-click="edit(enterprise)">Edit</button></td>
+        <td><button ng-click="delete(enterprise, $index)">Delete</button></td>
+        <td><a href="" ng-click="show(enterprise, $index)">Show Appliances and Users</a></td>
+    </tr>
+</table>
+
+<a href="#/enterprise/add" class="button">ADD AN ENTERPRISE</a>

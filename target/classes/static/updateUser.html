@@ -1,0 +1,10 @@
+<p>Current Details</p>
+<div>User Name &nbsp; <p>{{user.name}}</p> </div>
+<div>Secret Passphrase &nbsp; <p>{{user.secret}}</p> </div>
+
+<br><br>
+
+<p>Updated Details</p>
+<div>User Name &nbsp; <input type="text" ng-model="user.name"> </div>
+<div>Secret Passphrase &nbsp; <input type="text" ng-model="user.secret"> </div>
+<div><button ng-click="update()">Update</button>&nbsp;<button ng-click="goBack()">Cancel</button></div>

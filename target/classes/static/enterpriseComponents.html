@@ -1,0 +1,82 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Enterprise-Components</title>
+</head>
+<br><br>
+<h3><a href="#/enterprise/view">SHOW ENTERPRISES</a></h3>
+<br><br>
+
+<table border="2" cellspacing="5" cellpadding="5">
+    <tr>
+        <th><a>Id</a></th>
+        <th><a>Enterprise Name</a></th>
+        <th><a>Contact Person</a></th>
+        <th><a>Created Date</a></th>
+        <th colspan="2"></th>
+    </tr>
+    <tr ng-repeat="enterprise in enterprises.content">
+        <td>{{enterprise.id}}</td>
+        <td>{{enterprise.name}}</td>
+        <td>{{enterprise.contact}}</td>
+        <td>{{enterprise.created}}</td>
+        <td><button ng-click="edit(enterprise)">Edit</button></td>
+        <td><button ng-click="delete(enterprise, $index)">Delete</button></td>
+    </tr>
+</table>
+<br><br>
+
+<table class="list" border="1" cellspacing="5" cellpadding="5">
+    <thead>
+    <tr>
+        <th colspan="8">Appliances</th>
+    </tr>
+    </thead>
+    <tr>
+        <th><a>Id</a></th>
+        <th><a>Appliance Name</a></th>
+        <th><a>Parameter 1</a></th>
+        <th><a>Parameter 2</a></th>
+        <th><a>Parameter 3</a></th>
+        <th><a>Created Date</a></th>
+        <th colspan="2"></th>
+    </tr>
+    <tr ng-repeat="appliance in appliances.content">
+        <td>{{appliance.id}}</td>
+        <td>{{appliance.name}}</td>
+        <td>{{appliance.param1}}</td>
+        <td>{{appliance.param2}}</td>
+        <td>{{appliance.param3}}</td>
+        <td>{{appliance.created}}</td>
+        <td><button ng-click="edit(appliance)">Edit</button></td>
+        <td><button ng-click="delete(appliance, $index)">Delete</button></td>
+    </tr>
+</table>
+<br>
+<a href="#/appliance/add" class="button">ADD AN APPLIANCE</a>
+
+<br><br><br><br><br>
+
+<table class="list" border="1" cellspacing="5" cellpadding="5">
+    <thead>
+    <tr>
+        <th colspan="6">Users</th>
+    </tr>
+    </thead>
+    <tr>
+        <th><a>Id</a></th>
+        <th><a>User Name</a></th>
+        <th><a>Secret Passphrase</a></th>
+        <th><a>Created Date</a></th>
+        <th colspan="2"></th>
+    </tr>
+    <tr ng-repeat="user in users.content">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.secret}}</td>
+        <td>{{user.created}}</td>
+        <td><button ng-click="edit(user)">Edit</button></td>
+        <td><button ng-click="delete(user, $index)">Delete</button></td>
+    </tr>
+</table>
+<br>
+<a href="#/appliance/add" class="button">ADD AN USER</a>

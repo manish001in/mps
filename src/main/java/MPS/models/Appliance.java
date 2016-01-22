@@ -17,7 +17,7 @@ public class Appliance {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable=false, unique=true)
-    private Long id;
+    private long id;
 
     @Column(name="ApplianceName")
     private String AppName;
@@ -36,6 +36,7 @@ public class Appliance {
 
     @Column(name="ModifiedDate")
     private Date modifiedDate;
+
 
     @ManyToOne
     @JoinColumn(name="Enterprises_id", referencedColumnName = "id")
@@ -113,40 +114,12 @@ public class Appliance {
     public void setModifiedDate() {
         this.modifiedDate = new Date();
     }
+
+    public Enterprises getEnterprise() {
+        return enterprise;
+    }
+
+    public void setEnterprise(Enterprises enterprise) {
+        this.enterprise = enterprise;
+    }
 }
-/*
-
-@Entity
-@Table(name="first_child_table")
-public class FirstChild {
-    @Id
-    @Column(name="ID", nullable=false, unique=true)
-// Require Generator config
-    private Long id;
-
-    @Column(name="FIRST_CHILD_NAME", nullable=false)
-    private String name;
-
-    @ManyToOne
-    @JoinColumn(name="parent_id", referencedColumnName="ID")
-    private Parent parent;
-}
-
-@Entity
-@Table(name="second_child_table")
-public class SecondChild {
-    @Id
-    @Column(name="ID", nullable=false, unique=true)
-// Require Generator config
-    private Long id;
-
-    @Column(name="SECOND_CHILD_NAME", nullable=false)
-    private String name;
-
-    @ManyToOne
-    @JoinColumn(name="parent_id", referencedColumnName="ID")
-    private Parent parent;
-
-
-}
-*/

@@ -15,7 +15,6 @@ import java.util.List;
 public interface EnterprisesRepository extends JpaRepository<Enterprises, Long> {
 
 
-  /*  @Query("SELECT e.id FROM Enterprises e where e.EntpName = :entpName")
-    Long findIdbyTitle(@Param("entpName") String entpName);*/
+
 
 }

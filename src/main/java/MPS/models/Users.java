@@ -16,7 +16,7 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable=false, unique=true)
-    private Long id;
+    private long id;
 
     @Column(name="Name")
     private String name;
@@ -37,7 +37,7 @@ public class Users {
 
     public Users() { }
 
-    public Users(Long id) {
+    public Users(long id) {
         this.id = id;
     }
 
@@ -48,11 +48,11 @@ public class Users {
 
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long value) {
+    public void setId(long value) {
         this.id = value;
     }
 
@@ -84,5 +84,14 @@ public class Users {
     public void setModifiedDate() {
         this.modifiedDate = new Date();
     }
+
+    public Enterprises getEnterprise() {
+        return enterprise;
+    }
+
+    public void setEnterprise(Enterprises enterprise) {
+        this.enterprise = enterprise;
+    }
+
 
 }
