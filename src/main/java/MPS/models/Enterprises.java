@@ -16,8 +16,6 @@ import java.util.Date;
 @Table(name="Enterprises")
 public class Enterprises implements Serializable {
 
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable=false, unique=true)
@@ -31,16 +29,16 @@ public class Enterprises implements Serializable {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name="CreatedDate", nullable=false)
-    private Timestamp createdDate;
+    private Date createdDate;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name="ModifiedDate")
-    private Timestamp modifiedDate;
+    private Date modifiedDate;
 
-    @OneToMany(mappedBy = "Enterprises" ,orphanRemoval=true, cascade = {CascadeType.ALL})
+    @OneToMany(mappedBy = "enterprise" ,orphanRemoval=true, cascade = {CascadeType.ALL})
     public List<Appliance> appliances = new ArrayList<>();
 
-    @OneToMany(mappedBy = "Enterprises" ,orphanRemoval=true, cascade = {CascadeType.ALL})
+    @OneToMany(mappedBy = "enterprise" ,orphanRemoval=true, cascade = {CascadeType.ALL})
     public List<Users> users = new ArrayList<>();
 
     public Enterprises() { }
@@ -85,14 +83,14 @@ public class Enterprises implements Serializable {
 
     @PrePersist
     public void setCreatedDate() {
-        this.createdDate = new Timestamp(System.currentTimeMillis());
+        this.createdDate = new Date();
     }
 
     public Date getModifiedDate() { return modifiedDate; }
 
     @PreUpdate
     public void setModifiedDate() {
-        this.modifiedDate = new Timestamp(System.currentTimeMillis());
+        this.modifiedDate = new Date();
     }
 
     public List<Users> getUsers() {

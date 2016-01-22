@@ -31,9 +31,11 @@ public class Appliance {
     @Column(name="Parameter3")
     private String param3;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name="CreatedDate", nullable=false)
     private Date createdDate;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name="ModifiedDate")
     private Date modifiedDate;
 

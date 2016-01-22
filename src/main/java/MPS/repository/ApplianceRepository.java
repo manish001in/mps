@@ -14,6 +14,6 @@ import java.util.List;
 @Repository
 public interface ApplianceRepository extends JpaRepository<Appliance, Long> {
 
-    @Query("SELECT * FROM Appliance a where a.Enterprises_id = :ent_id")
+    @Query("SELECT a FROM Appliance a where a.enterprise = :ent_id")
     List<Appliance> findApplianceByEnt_id(@Param("ent_id") long ent_id);
 }

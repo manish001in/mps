@@ -21,7 +21,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Controller
-@RequestMapping("")
+@RequestMapping("/")
 public class ApplianceUserController {
 
     @Autowired
@@ -40,13 +40,13 @@ public class ApplianceUserController {
           }
           return "User successfully created! (id = " + enterprise.getId() + ")";
       }*/
-    @RequestMapping(value="/appliance/add" ,method = RequestMethod.POST)
+    @RequestMapping(value="appliance/add" ,method = RequestMethod.POST)
     Appliance add(@RequestBody Appliance appliance) {
         return appliancerepo.save(appliance);
     }
 
 
-    @RequestMapping(value = "/list")
+    @RequestMapping(value = "list")
     @ResponseBody
     public LinkedList<List> list(long id) {
         List appliances = appliancerepo.findApplianceByEnt_id(id);
@@ -57,7 +57,7 @@ public class ApplianceUserController {
         return together;
     }
 
-    @RequestMapping(value = "/appliance/update/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "appliance/update/{id}", method = RequestMethod.PUT)
     Appliance update(@PathVariable long id, @RequestBody Appliance appliance) {
         appliance.setId(id);
         appliance.setModifiedDate();
@@ -65,19 +65,19 @@ public class ApplianceUserController {
 
     }
 
-    @RequestMapping(value = "/appliance/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "appliance/delete/{id}", method = RequestMethod.DELETE)
     void deleteAppliance(@PathVariable Long id) {
         appliancerepo.delete(id);
     }
 
 
-    @RequestMapping(value="/user/add" , method = RequestMethod.POST)
+    @RequestMapping(value="user/add" , method = RequestMethod.POST)
     Users add(@RequestBody Users user) {
         return userrepo.save(user);
     }
 
 
-    @RequestMapping(value = "/user/update/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "user/update/{id}", method = RequestMethod.PUT)
     Users update(@PathVariable long id, @RequestBody Users user) {
         user.setId(id);
         user.setModifiedDate();
@@ -85,7 +85,7 @@ public class ApplianceUserController {
 
     }
 
-    @RequestMapping(value = "/user/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "user/delete/{id}", method = RequestMethod.DELETE)
     void deleteUser(@PathVariable Long id) {
         userrepo.delete(id);
     }

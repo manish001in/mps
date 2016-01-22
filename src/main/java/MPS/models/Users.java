@@ -24,9 +24,11 @@ public class Users {
     @Column(name="Passcode")
     private String passcode;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name="CreatedDate", nullable=false)
     private Date createdDate;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name="ModifiedDate")
     private Date modifiedDate;
 
