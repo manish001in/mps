@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <title>Portal-Home</title>
 </head>
-<body ng-controller="homeCtrl">
+<body>
 
-    <p class="welcome">Welcome to the Portal</p>
-
-            <h3><a href="#/enterprise/view">SHOW ENTERPRISES</a></h3>
+<div ng-view> </div>
 
 </body>
 <script type="text/javascript" src="js/angular.js"></script>
 <script type="text/javascript" src="js/angular-route.js"></script>
 <script type="text/javascript" src="js/angular-resource.js"></script>
-<script type="text/javascript" src="HomeController.js"></script>
+
+<!-- Main -->
+<script type="text/javascript" src="app.js"></script>
+
+<!-- Controllers -->
+<script src="controllers/EnterpriseCtrl.js"></script>
+
+<!-- Services -->
+<script src="services/Enterprise.js"></script>
 </html>

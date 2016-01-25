@@ -33,8 +33,9 @@ public class EnterpriseController {
         }
         return "User succesfully created! (id = " + enterprise.getId() + ")";
     }*/
-    @RequestMapping(value="/create" ,method = RequestMethod.POST)
+    @RequestMapping(value="/create" , method = RequestMethod.POST)
     Enterprises add(@RequestBody Enterprises enterprise) {
+        System.out.println("name"+ enterprise.getEntpName() +"contact"+ enterprise.getContactPerson() +"");
         return enterpriserepo.save(enterprise);
     }
 

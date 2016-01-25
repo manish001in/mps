@@ -46,7 +46,7 @@ public class ApplianceUserController {
     }
 
 
-    @RequestMapping(value = "list")
+    @RequestMapping(value = "/{id}/list")
     @ResponseBody
     public LinkedList<List> list(long id) {
         List appliances = appliancerepo.findApplianceByEnt_id(id);

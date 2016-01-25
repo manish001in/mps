@@ -17,11 +17,11 @@
         <th colspan="2"></th>
         <th colspan="1"></th>
     </tr>
-    <tr ng-repeat="enterprise in enterprises.content">
+    <tr ng-repeat="enterprise in enterprises">
         <td>{{enterprise.id}}</td>
-        <td>{{enterprise.name}}</td>
-        <td>{{enterprise.contact}}</td>
-        <td>{{enterprise.created}}</td>
+        <td>{{enterprise.entpName}}</td>
+        <td>{{enterprise.contactPerson}}</td>
+        <td>{{enterprise.createdDate | date:'medium'}}</td>
         <td><button ng-click="edit(enterprise)">Edit</button></td>
         <td><button ng-click="delete(enterprise, $index)">Delete</button></td>
         <td><a href="" ng-click="show(enterprise, $index)">Show Appliances and Users</a></td>
