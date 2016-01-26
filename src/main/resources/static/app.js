@@ -1,7 +1,7 @@
 var app = angular.module('mpsApp', ['ngRoute','ngResource']);
 
 app.config(['$routeProvider','$locationProvider',
-    function ($routeProvider,$locationProvider) {
+    function ($routeProvider) {
 		$routeProvider.
 		    when('/', {
                 templateUrl: 'home.html'

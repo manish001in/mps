@@ -49,6 +49,8 @@ public class EnterpriseController {
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
     Enterprises update(@PathVariable long id, @RequestBody Enterprises enterprise) {
+        System.out.println(id);
+        System.out.println(enterprise);
         enterprise.setId(id);
         enterprise.setModifiedDate();
         return enterpriserepo.save(enterprise);
@@ -60,6 +62,10 @@ public class EnterpriseController {
         enterpriserepo.delete(id);
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    Enterprises get(@PathVariable Long id) {
+        return enterpriserepo.findOne(id);
+    }
 
 }
 /*

@@ -1,10 +1,4 @@
-<p>Current Details</p>
-<div>Enterprise Name &nbsp; <p>{{enterprise.name}}</p> </div>
-<div>Contact Person &nbsp; <p>{{enterprise.contact}}</p> </div>
-
-<br><br>
-
 <p>Updated Details</p>
-<div>Enterprise Name &nbsp; <input type="text" ng-model="enterprise.name"> </div>
-<div>Contact Person &nbsp; <input type="text" ng-model="enterprise.contact"> </div>
-<div><button ng-click="update()">Update</button>&nbsp;<button ng-click="goBack()">Cancel</button></div>
+<div>Enterprise Name &nbsp; <input type="text" ng-model="enterprise.entpName"> </div>
+<div>Contact Person &nbsp; <input type="text" ng-model="enterprise.contactPerson"> </div>
+<div><button ng-click="update()">Update</button>&nbsp;<button onclick="goBack()">Cancel</button></div>

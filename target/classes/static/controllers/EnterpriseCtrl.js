@@ -7,7 +7,7 @@
  *
  * @requires $scope
  * */
-app.controller('EnterpriseCtrl', ['$scope', 'Enterprise', '$location', function($scope, Enterprise, $route, $location, $rootScope) {
+app.controller('EnterpriseCtrl', ['$scope', 'Enterprise','$route', '$location','$rootScope', function($scope, Enterprise, $route, $location, $rootScope) {
 
     $scope.enterprises = Enterprise.list({}, function (response) {
             return response;
@@ -25,10 +25,12 @@ app.controller('EnterpriseCtrl', ['$scope', 'Enterprise', '$location', function(
 	    $scope.edit = function(enterprise){
     		$location.path('/enterprise/update/' + enterprise.id);
         };
-	   // $scope.enterprise = Enterprise.get({id: $route.current.params.id});
+	$scope.enterprise = Enterprise.get({id: $route.current.params.id});
 	$scope.update = function(){
-		Enterprise.update($route.current.params.id);
-		$location.path($rootScope.history.view);
+		console.log($route.current.params.id);
+		Enterprise.update($route.current.params.id, $scope.enterprise);
+		$scope.enterprise = null;
+		//$location.path($rootScope.history.view);
 	};
 
 }]);
