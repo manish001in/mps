@@ -18,6 +18,10 @@ app.config(['$routeProvider','$locationProvider',
                 controller: 'EnterpriseCtrl',
                 templateUrl: 'updateEnterprise.html'
             }).
+            when('/:id/list', {
+                controller: 'ApplianceUserCtrl',
+                templateUrl: 'enterpriseComponents.html'
+            }).
             otherwise({
 			    redirectTo: '/'
 			});

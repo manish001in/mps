@@ -19,7 +19,7 @@ public class Enterprises implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable=false, unique=true)
-    private long id;
+    private Long id;
 
     @Column(name="EntpName")
     private String entpName;
@@ -35,15 +35,15 @@ public class Enterprises implements Serializable {
     @Column(name="ModifiedDate")
     private Date modifiedDate;
 
-    @OneToMany(mappedBy = "enterprise" ,orphanRemoval=true, cascade = {CascadeType.ALL})
-    public List<Appliance> appliances = new ArrayList<>();
+    @OneToMany(mappedBy = "enterprise" ,orphanRemoval=true, cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    public List<Appliance> appliances;
 
-    @OneToMany(mappedBy = "enterprise" ,orphanRemoval=true, cascade = {CascadeType.ALL})
-    public List<Users> users = new ArrayList<>();
+    @OneToMany(mappedBy = "enterprise" ,orphanRemoval=true, cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    public List<Users> users;
 
     public Enterprises() { }
 
-    public Enterprises(long id) {
+    public Enterprises(Long id) {
         this.id = id;
     }
 
@@ -55,11 +55,11 @@ public class Enterprises implements Serializable {
 
     // Getter and setter methods
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long value) {
+    public void setId(Long value) {
         this.id = value;
     }
 

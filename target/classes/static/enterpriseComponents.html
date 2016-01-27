@@ -14,13 +14,13 @@
         <th><a>Created Date</a></th>
         <th colspan="2"></th>
     </tr>
-    <tr ng-repeat="enterprise in enterprises.content">
+    <tr>
         <td>{{enterprise.id}}</td>
-        <td>{{enterprise.name}}</td>
-        <td>{{enterprise.contact}}</td>
-        <td>{{enterprise.created}}</td>
+        <td>{{enterprise.entpName}}</td>
+        <td>{{enterprise.contactPerson}}</td>
+        <td>{{enterprise.createdDate | date:'medium'}}</td>
         <td><button ng-click="edit(enterprise)">Edit</button></td>
-        <td><button ng-click="delete(enterprise, $index)">Delete</button></td>
+        <td><button ng-click="delete(enterprise)">Delete</button></td>
     </tr>
 </table>
 <br><br>
@@ -47,7 +47,7 @@
         <td>{{appliance.param2}}</td>
         <td>{{appliance.param3}}</td>
         <td>{{appliance.created}}</td>
-        <td><button ng-click="edit(appliance)">Edit</button></td>
+        <td><button ng-click="editA(appliance)">Edit</button></td>
         <td><button ng-click="delete(appliance, $index)">Delete</button></td>
     </tr>
 </table>

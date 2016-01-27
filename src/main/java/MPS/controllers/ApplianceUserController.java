@@ -28,25 +28,13 @@ public class ApplianceUserController {
     private ApplianceRepository appliancerepo;
     private UserRepository userrepo;
 
-
-    /*  @ResponseBody
-      public String create(String entp, String contact) {
-          Enterprises enterprise = null;
-          try {
-              enterprise = new Enterprises(entp, contact);
-              enterpriserepo.save(enterprise);
-          } catch (Exception ex) {
-              return "Error creating the user: " + ex.toString();
-          }
-          return "User successfully created! (id = " + enterprise.getId() + ")";
-      }*/
     @RequestMapping(value="appliance/add" ,method = RequestMethod.POST)
     Appliance add(@RequestBody Appliance appliance) {
         return appliancerepo.save(appliance);
     }
 
 
-    @RequestMapping(value = "/{id}/list")
+    @RequestMapping(value = "{id}/list")
     @ResponseBody
     public LinkedList<List> list(long id) {
         List appliances = appliancerepo.findApplianceByEnt_id(id);

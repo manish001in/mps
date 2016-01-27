@@ -12,19 +12,20 @@ app.controller('EnterpriseCtrl', ['$scope', 'Enterprise','$route', '$location','
     $scope.enterprises = Enterprise.list({}, function (response) {
             return response;
             });
+
     $scope.add = function(){
            	Enterprise.save($scope.enterprise,function (){});
            	$scope.enterprise = null;
     	};
+
     $scope.delete = function(enterprise, index){
-		alert("Do you really want to delete an Enterprise at index " + (index+1) + "?");
-		//book.$remove();
-		Enterprise.remove(enterprise);
+    var r = confirm("Do you really want to delete an Enterprise at index " + (index+1) + "?");
+    if (r == true) {
+        Enterprise.remove(enterprise);
 		$scope.enterprises.splice(index, 1);
+    } else {}
 	};
-	    $scope.edit = function(enterprise){
-    		$location.path('/enterprise/update/' + enterprise.id);
-        };
+
 	$scope.enterprise = Enterprise.get({id: $route.current.params.id});
 	$scope.update = function(){
 		console.log($route.current.params.id);
@@ -32,5 +33,13 @@ app.controller('EnterpriseCtrl', ['$scope', 'Enterprise','$route', '$location','
 		$scope.enterprise = null;
 		//$location.path($rootScope.history.view);
 	};
+
+    $scope.show = function(enterprise){
+      	$location.path('/' + enterprise.id + '/list');
+    };
+
+	$scope.edit = function(enterprise){
+    	$location.path('/enterprise/update/' + enterprise.id);
+    };
 
 }]);
