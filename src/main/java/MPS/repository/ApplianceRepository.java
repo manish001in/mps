@@ -1,6 +1,7 @@
 package MPS.repository;
 
 import MPS.models.Appliance;
+import MPS.models.Enterprises;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -15,5 +16,5 @@ import java.util.List;
 public interface ApplianceRepository extends JpaRepository<Appliance, Long> {
 
     @Query("SELECT a FROM Appliance a where a.enterprise = :ent_id")
-    List<Appliance> findApplianceByEnt_id(@Param("ent_id") long ent_id);
+    List<Appliance> findApplianceByEnt_id(@Param("ent_id") Enterprises ent_id);
 }

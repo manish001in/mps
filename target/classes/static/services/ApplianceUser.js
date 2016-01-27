@@ -14,13 +14,13 @@ app.service('ApplianceUser', ['$resource',
                 remove: {method: 'DELETE', url:'enterprise/delete/:id', params:{id: '@id'}},
                 update: {method: 'PUT', url:'enterprise/update/:id', params:{id: '@id'}},
 
-                listAU: {method: 'GET', isArray: false , url : ':id/list'},
+                listAU: {method: 'GET', isArray: true , url : ':id/list', params:{id: '@id'}},
 
-                saveA: {method: 'POST', isArray: false , url : 'appliance/add'},
+                saveA: {method: 'POST', isArray: false , url : ':id/appliance/add', params:{id: '@id'}},
                 removeA: {method: 'DELETE', url:'appliance/delete/:id', params:{id: '@id'}},
                 updateA: {method: 'PUT', url:'appliance/update/:id', params:{id: '@id'}},
 
-                saveU: {method: 'POST', isArray: false , url : 'user/add'},
+                saveU: {method: 'POST', isArray: false , url : ':id/user/add', params:{id: '@id'}},
                 removeU: {method: 'DELETE', url:'user/delete/:id', params:{id: '@id'}},
                 updateU: {method: 'PUT', url:'user/update/:id', params:{id: '@id'}}
             });

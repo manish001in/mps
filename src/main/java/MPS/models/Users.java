@@ -16,7 +16,7 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable=false, unique=true)
-    private long id;
+    private Long id;
 
     @Column(name="Name")
     private String name;
@@ -32,14 +32,14 @@ public class Users {
     @Column(name="ModifiedDate")
     private Date modifiedDate;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name="Enterprises_id", referencedColumnName = "id")
     private Enterprises enterprise;
 
 
     public Users() { }
 
-    public Users(long id) {
+    public Users(Long id) {
         this.id = id;
     }
 
@@ -50,11 +50,11 @@ public class Users {
 
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long value) {
+    public void setId(Long value) {
         this.id = value;
     }
 

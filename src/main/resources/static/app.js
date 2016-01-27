@@ -22,6 +22,22 @@ app.config(['$routeProvider','$locationProvider',
                 controller: 'ApplianceUserCtrl',
                 templateUrl: 'enterpriseComponents.html'
             }).
+            when('/:id/appliance/add', {
+                controller: 'ApplianceUserCtrl',
+                templateUrl: 'addAppliance.html'
+            }).
+            when('/:id/user/add', {
+                controller: 'ApplianceUserCtrl',
+                templateUrl: 'addUser.html'
+            }).
+            when('/appliance/update/:id', {
+                controller: 'ApplianceUserCtrl',
+                templateUrl: 'updateAppliance.html'
+            }).
+            when('/user/update/:id', {
+                controller: 'ApplianceUserCtrl',
+                templateUrl: 'updateUser.html'
+            }).
             otherwise({
 			    redirectTo: '/'
 			});

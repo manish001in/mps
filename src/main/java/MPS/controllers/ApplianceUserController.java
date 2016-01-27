@@ -26,19 +26,22 @@ public class ApplianceUserController {
 
     @Autowired
     private ApplianceRepository appliancerepo;
+    @Autowired
     private UserRepository userrepo;
 
-    @RequestMapping(value="appliance/add" ,method = RequestMethod.POST)
-    Appliance add(@RequestBody Appliance appliance) {
+    @RequestMapping(value="{id}/appliance/add" , method = RequestMethod.POST)
+    @ResponseBody
+    Appliance addAppliance(@PathVariable Enterprises id ,@RequestBody Appliance appliance) {
+        appliance.setEnterprise(id);
         return appliancerepo.save(appliance);
     }
 
 
-    @RequestMapping(value = "{id}/list")
+    @RequestMapping(value = "{id}/list", method = RequestMethod.GET)
     @ResponseBody
-    public LinkedList<List> list(long id) {
-        List appliances = appliancerepo.findApplianceByEnt_id(id);
-        List users = userrepo.findUsersByEnt_id(id);
+    public LinkedList<List> listStuff(@PathVariable Enterprises id) {
+        List<Appliance> appliances = appliancerepo.findApplianceByEnt_id(id);
+        List<Users> users = userrepo.findUsersByEnt_id(id);
         LinkedList<List> together = new LinkedList<List>();
         together.add(appliances);
         together.add(users);
@@ -46,7 +49,8 @@ public class ApplianceUserController {
     }
 
     @RequestMapping(value = "appliance/update/{id}", method = RequestMethod.PUT)
-    Appliance update(@PathVariable long id, @RequestBody Appliance appliance) {
+    @ResponseBody
+    Appliance updateAppliance(@PathVariable Long id, @RequestBody Appliance appliance) {
         appliance.setId(id);
         appliance.setModifiedDate();
         return appliancerepo.save(appliance);
@@ -54,19 +58,23 @@ public class ApplianceUserController {
     }
 
     @RequestMapping(value = "appliance/delete/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
     void deleteAppliance(@PathVariable Long id) {
         appliancerepo.delete(id);
     }
 
 
-    @RequestMapping(value="user/add" , method = RequestMethod.POST)
-    Users add(@RequestBody Users user) {
+    @RequestMapping(value="{id}/user/add" , method = RequestMethod.POST)
+    @ResponseBody
+    Users addUser(@PathVariable Enterprises id ,@RequestBody Users user) {
+        user.setEnterprise(id);
         return userrepo.save(user);
     }
 
 
     @RequestMapping(value = "user/update/{id}", method = RequestMethod.PUT)
-    Users update(@PathVariable long id, @RequestBody Users user) {
+    @ResponseBody
+    Users updateUser(@PathVariable Long id, @RequestBody Users user) {
         user.setId(id);
         user.setModifiedDate();
         return userrepo.save(user);
@@ -74,6 +82,7 @@ public class ApplianceUserController {
     }
 
     @RequestMapping(value = "user/delete/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
     void deleteUser(@PathVariable Long id) {
         userrepo.delete(id);
     }

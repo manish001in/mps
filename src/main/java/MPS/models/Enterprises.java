@@ -35,11 +35,11 @@ public class Enterprises implements Serializable {
     @Column(name="ModifiedDate")
     private Date modifiedDate;
 
-    @OneToMany(mappedBy = "enterprise" ,orphanRemoval=true, cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+/*    @OneToMany(mappedBy = "enterprise" ,orphanRemoval=true, cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     public List<Appliance> appliances;
 
     @OneToMany(mappedBy = "enterprise" ,orphanRemoval=true, cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    public List<Users> users;
+    public List<Users> users;*/
 
     public Enterprises() { }
 
@@ -93,7 +93,7 @@ public class Enterprises implements Serializable {
         this.modifiedDate = new Date();
     }
 
-    public List<Users> getUsers() {
+/*    public List<Users> getUsers() {
         return users;
     }
 
@@ -107,7 +107,7 @@ public class Enterprises implements Serializable {
 
     public void setAppliances(List<Appliance> appliances) {
         this.appliances = appliances;
-    }
+    }*/
 
 }
 
