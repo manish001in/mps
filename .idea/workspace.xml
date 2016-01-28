@@ -2,25 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6efbded-66da-4ced-ac28-0e6a17598c10" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MPS/controllers/EnterpriseController.class" afterPath="$PROJECT_DIR$/target/classes/MPS/controllers/EnterpriseController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MPS/controllers/ApplianceUserController.java" afterPath="$PROJECT_DIR$/src/main/java/MPS/controllers/ApplianceUserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MPS/controllers/EnterpriseController.java" afterPath="$PROJECT_DIR$/src/main/java/MPS/controllers/EnterpriseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MPS/repository/ApplianceRepository.java" afterPath="$PROJECT_DIR$/src/main/java/MPS/repository/ApplianceRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MPS/repository/EnterprisesRepository.java" afterPath="$PROJECT_DIR$/src/main/java/MPS/repository/EnterprisesRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MPS/repository/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/MPS/repository/UserRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/addAppliance.html" afterPath="$PROJECT_DIR$/src/main/resources/static/addAppliance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/addEnterprise.html" afterPath="$PROJECT_DIR$/src/main/resources/static/addEnterprise.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/addUser.html" afterPath="$PROJECT_DIR$/src/main/resources/static/addUser.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/controllers/ApplianceUserCtrl.js" afterPath="$PROJECT_DIR$/src/main/resources/static/controllers/ApplianceUserCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/controllers/EnterpriseCtrl.js" afterPath="$PROJECT_DIR$/src/main/resources/static/controllers/EnterpriseCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/services/ApplianceUser.js" afterPath="$PROJECT_DIR$/src/main/resources/static/services/ApplianceUser.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/updateAppliance.html" afterPath="$PROJECT_DIR$/src/main/resources/static/updateAppliance.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/updateEnterprise.html" afterPath="$PROJECT_DIR$/src/main/resources/static/updateEnterprise.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/updateUser.html" afterPath="$PROJECT_DIR$/src/main/resources/static/updateUser.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/addUser.html" afterPath="$PROJECT_DIR$/target/classes/static/addUser.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/controllers/ApplianceUserCtrl.js" afterPath="$PROJECT_DIR$/target/classes/static/controllers/ApplianceUserCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/controllers/EnterpriseCtrl.js" afterPath="$PROJECT_DIR$/target/classes/static/controllers/EnterpriseCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/updateEnterprise.html" afterPath="$PROJECT_DIR$/target/classes/static/updateEnterprise.html" />
     </list>
     <ignored path="mps.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,16 +45,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Enterprise.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/services/Enterprise.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="101" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="101" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ApplianceUser.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/services/ApplianceUser.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -87,21 +65,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EnterpriseController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EnterpriseController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/MPS/controllers/EnterpriseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.33333334">
+              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApplianceUserCtrl.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EnterpriseCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/controllers/EnterpriseCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApplianceUserCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/controllers/ApplianceUserCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.032258064">
-              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="updateUser.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/updateUser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.6666665">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="109" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addUser.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/addUser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.6666667">
+              <caret line="1" column="109" selection-start-line="1" selection-start-column="109" selection-end-line="1" selection-end-column="109" />
               <folding />
             </state>
           </provider>
@@ -138,11 +146,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/app.js" />
         <option value="$PROJECT_DIR$/src/main/java/MPS/models/Appliance.java" />
         <option value="$PROJECT_DIR$/src/main/java/MPS/models/Users.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/addAppliance.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/services/Enterprise.js" />
         <option value="$PROJECT_DIR$/src/test/java/MPS/controllers/EnterpriseControllerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/addUser.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/updateEnterprise.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/controllers/EnterpriseCtrl.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/services/ApplianceUser.js" />
         <option value="$PROJECT_DIR$/src/main/java/MPS/controllers/EnterpriseController.java" />
@@ -151,7 +156,11 @@
         <option value="$PROJECT_DIR$/src/main/java/MPS/repository/ApplianceRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/MPS/repository/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/updateAppliance.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/addAppliance.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/addEnterprise.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/updateEnterprise.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/updateUser.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/addUser.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/controllers/ApplianceUserCtrl.js" />
       </list>
     </option>
@@ -858,7 +867,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39833158" sideWeight="0.50193477" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974634" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38686132" sideWeight="0.49032614" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38686132" sideWeight="0.49032614" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16860144" sideWeight="0.4880597" order="0" side_tool="false" content_ui="combo" />
@@ -1021,14 +1030,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/addEnterprise.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MPS/models/Users.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1065,14 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/updateEnterprise.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6666667">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1117,22 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MPS/controllers/EnterpriseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/updateAppliance.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16949153">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/enterpriseComponents.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="26.333334">
@@ -1141,42 +1118,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/updateUser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27118644">
-          <caret line="8" column="72" selection-start-line="8" selection-start-column="72" selection-end-line="8" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/addUser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.033898305">
-          <caret line="1" column="71" selection-start-line="1" selection-start-column="71" selection-end-line="1" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/addAppliance.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="67" selection-start-line="0" selection-start-column="67" selection-end-line="0" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/services/Enterprise.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.38709676">
           <caret line="12" column="101" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/controllers/EnterpriseCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4516129">
-          <caret line="38" column="6" selection-start-line="28" selection-start-column="4" selection-end-line="38" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1189,10 +1134,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/updateAppliance.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.0">
+          <caret line="12" column="109" selection-start-line="12" selection-start-column="109" selection-end-line="12" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/addAppliance.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0">
+          <caret line="3" column="101" selection-start-line="3" selection-start-column="71" selection-end-line="3" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/addEnterprise.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="128" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/updateEnterprise.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23728813">
+          <caret line="7" column="111" selection-start-line="7" selection-start-column="78" selection-end-line="7" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/updateUser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.6666665">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/addUser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6666667">
+          <caret line="1" column="109" selection-start-line="1" selection-start-column="109" selection-end-line="1" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/controllers/EnterpriseCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/controllers/ApplianceUserCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.032258064">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MPS/controllers/EnterpriseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding />
         </state>
       </provider>

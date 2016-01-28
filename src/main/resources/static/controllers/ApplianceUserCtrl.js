@@ -18,6 +18,7 @@ app.controller('ApplianceUserCtrl', ['$scope', 'ApplianceUser','$route', '$locat
         if (r == true) {
             ApplianceUser.remove(enterprise);
         } else {}
+        $location.path('/enterprise/view');
     };
 
     $scope.components = ApplianceUser.listAU({id: $route.current.params.id}, function (response) {
@@ -38,14 +39,15 @@ app.controller('ApplianceUserCtrl', ['$scope', 'ApplianceUser','$route', '$locat
 
     $scope.editA = function(appliance){
         	$location.path('/appliance/update/' + appliance.id);
-        	$scope.applianceOld = ApplianceUser.getA({id: appliance.id}, function (response){
+        	$rootScope.applianceOld = ApplianceUser.getA({id: appliance.id}, function (response){
                 return response;
             });
+
     };
 
     $scope.editU = function(user){
           	$location.path('/user/update/' + user.id);
-          	$scope.userOld = ApplianceUser.getU({id: user.id}, function (response){
+          	$rootScope.userOld = ApplianceUser.getU({id: user.id}, function (response){
                 return response;
             });
     };
