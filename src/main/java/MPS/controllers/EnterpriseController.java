@@ -42,10 +42,12 @@ public class EnterpriseController {
     Enterprises update(@PathVariable("id") Long id, @RequestBody Enterprises enterprise) {
         System.out.println(id);
         System.out.println(enterprise);
-        enterprise= enterpriserepo.findById(id);
-        enterprise.setId(id);
-        enterprise.setModifiedDate();
-        return enterpriserepo.save(enterprise);
+        Enterprises enterpriseOld= enterpriserepo.findById(id);
+        //enterprise.setId(id);
+        enterpriseOld.setEntpName(enterprise.getEntpName());
+        enterpriseOld.setContactPerson(enterprise.getContactPerson());
+        enterpriseOld.setModifiedDate();
+        return enterpriserepo.save(enterpriseOld);
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
@@ -60,6 +62,6 @@ public class EnterpriseController {
         Enterprises enterprise=enterpriserepo.findEnterprise(id);
         System.out.println(enterprise);
         return enterprise;
-     }
+    }
 
 }

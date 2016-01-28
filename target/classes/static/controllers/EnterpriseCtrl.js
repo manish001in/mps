@@ -26,17 +26,16 @@ app.controller('EnterpriseCtrl', ['$scope', 'Enterprise','$route', '$location','
     } else {}
 	};
 
-
+    if(!isNaN($route.current.params.id)){
+            $scope.enterpriseOld = Enterprise.getOne({id: $route.current.params.id}, function (response){
+                return response;
+            });
+    }
 
 	$scope.update = function(){
-	    $scope.enterprise = Enterprise.getOne({id: $route.current.params.id}, function (response){
-    	    return response;
-    	});
-    	console.log($scope.enterprise);
-		console.log($route.current.params.id);
-		Enterprise.update({id : $route.current.params.id}, {enterprise: $scope.enterprise},function (){});
+    	enterprise=$scope.enterprise;
+		Enterprise.update({id : $route.current.params.id}, enterprise , function (){});
 		$scope.enterprise = null;
-		//$location.path($rootScope.history.view);
 	};
 
     $scope.show = function(enterprise){

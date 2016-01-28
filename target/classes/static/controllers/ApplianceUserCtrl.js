@@ -38,19 +38,25 @@ app.controller('ApplianceUserCtrl', ['$scope', 'ApplianceUser','$route', '$locat
 
     $scope.editA = function(appliance){
         	$location.path('/appliance/update/' + appliance.id);
+        	$scope.applianceOld = ApplianceUser.getA({id: appliance.id}, function (response){
+                return response;
+            });
     };
 
     $scope.editU = function(user){
           	$location.path('/user/update/' + user.id);
+          	$scope.userOld = ApplianceUser.getU({id: user.id}, function (response){
+                return response;
+            });
     };
 
     $scope.deleteA = function(appliance, index){
             var r = confirm("Do you really want to delete this Appliance at index " + (index+1) + "?");
             if (r == true) {
                 ApplianceUser.removeA(appliance);
-                var listapp= $scope.components[0];
-                delete listapp[index];
-                $scope.components[0] = listapp;
+                var listApp= $scope.components[0];
+                delete listApp[index];
+                $scope.components[0] = listApp;
             } else {}
     };
 
@@ -58,15 +64,14 @@ app.controller('ApplianceUserCtrl', ['$scope', 'ApplianceUser','$route', '$locat
             var r = confirm("Do you really want to delete this User at index " + (index+1) + "?");
             if (r == true) {
                 ApplianceUser.removeU(user);
-                var listuser= $scope.components[1];
-                delete listuser[index];
-                $scope.components[1] = listuser;
+                var listUser= $scope.components[1];
+                delete listUser[index];
+                $scope.components[1] = listUser;
             } else {}
     };
-    console.log($scope.appliance);
+
     $scope.addApp = function(){
             appliance = $scope.appliance;
-            console.log(appliance);
           	ApplianceUser.saveA({idd: $route.current.params.id},appliance,function (){});
            	$scope.appliance = null;
     };
@@ -76,36 +81,17 @@ app.controller('ApplianceUserCtrl', ['$scope', 'ApplianceUser','$route', '$locat
            	ApplianceUser.saveU({idd: $route.current.params.id},user,function (){});
            	$scope.user = null;
     };
-/*
-    $scope.appliance = ApplianceUser.getA({id: $route.current.params.id});
-    	$scope.updateApp = function(){
-    		console.log($route.current.params.id);
-    		ApplianceUser.updateA($route.current.params.id, $scope.appliance);
+
+    $scope.updateApp = function(){
+        	appliance=$scope.appliance;
+    		ApplianceUser.update({id : $route.current.params.id}, appliance , function (){});
     		$scope.appliance = null;
-    		//$location.path($rootScope.history.view);
-    };
-
-    $scope.user = ApplianceUser.getU({id: $route.current.params.id});
-    	$scope.updateUser = function(){
-    		console.log($route.current.params.id);
-    		ApplianceUser.updateU($route.current.params.id, $scope.user);
-    		$scope.user = null;
-    		//$location.path($rootScope.history.view);
-    };*/
-
-/*
-    $scope.add = function(){
-           	Enterprise.save($scope.enterprise,function (){});
-           	$scope.enterprise = null;
     	};
 
-	$scope.enterprise = Enterprise.get({id: $route.current.params.id});
-	$scope.update = function(){
-		console.log($route.current.params.id);
-		Enterprise.update($route.current.params.id, $scope.enterprise);
-		$scope.enterprise = null;
-		//$location.path($rootScope.history.view);
+	$scope.updateUser = function(){
+    	user=$scope.user;
+		ApplianceUser.update({id : $route.current.params.id}, user , function (){});
+		$scope.user = null;
 	};
 
-*/
 }]);

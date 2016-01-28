@@ -17,8 +17,8 @@ public interface EnterprisesRepository extends JpaRepository<Enterprises, Long> 
 
     Enterprises findById(Long id);
 
-    @Query("SELECT e.id,e.entpName,e.contactPerson,e.createdDate FROM Enterprises e")
-    List<Enterprises> findAllEnterprises();
+/*    @Query("SELECT e.id,e.entpName,e.contactPerson,e.createdDate FROM Enterprises e")
+    List<Enterprises> findAllEnterprises();*/
 
     @Query("SELECT e FROM Enterprises e where e.id = :id")
     Enterprises findEnterprise(@Param("id") Long id);

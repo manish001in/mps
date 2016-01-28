@@ -29,14 +29,6 @@ public class ApplianceUserController {
     @Autowired
     private UserRepository userrepo;
 
-    @RequestMapping(value="{idd}/appliance/add" , method = RequestMethod.POST)
-    @ResponseBody
-    Appliance addAppliance(@PathVariable("idd") Enterprises idd , @RequestBody Appliance appliance) {
-        appliance.setEnterprise(idd);
-        appliance.setCreatedDate();
-        return appliancerepo.save(appliance);
-    }
-
 
     @RequestMapping(value = "{id}/list", method = RequestMethod.GET)
     @ResponseBody
@@ -49,12 +41,24 @@ public class ApplianceUserController {
         return together;
     }
 
+    @RequestMapping(value="{idd}/appliance/add" , method = RequestMethod.POST)
+    @ResponseBody
+    Appliance addAppliance(@PathVariable("idd") Enterprises idd , @RequestBody Appliance appliance) {
+        appliance.setEnterprise(idd);
+        appliance.setCreatedDate();
+        return appliancerepo.save(appliance);
+    }
+
     @RequestMapping(value = "appliance/update/{id}", method = RequestMethod.PUT)
     @ResponseBody
     Appliance updateAppliance(@PathVariable("id") Long id, @RequestBody Appliance appliance) {
-        appliance.setId(id);
-        appliance.setModifiedDate();
-        return appliancerepo.save(appliance);
+        Appliance applianceOld= appliancerepo.findById(id);
+        applianceOld.setAppName(appliance.getAppName());
+        applianceOld.setparam1(appliance.getparam1());
+        applianceOld.setparam2(appliance.getparam2());
+        applianceOld.setparam3(appliance.getparam3());
+        applianceOld.setModifiedDate();
+        return appliancerepo.save(applianceOld);
 
     }
 
@@ -64,6 +68,13 @@ public class ApplianceUserController {
         appliancerepo.delete(id);
     }
 
+    @RequestMapping(value = "appliance/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    Appliance getA(@PathVariable("id") Long id) {
+        Appliance appliance=appliancerepo.findAppliance(id);
+        System.out.println(appliance);
+        return appliance;
+    }
 
     @RequestMapping(value="{idd}/user/add" , method = RequestMethod.POST)
     @ResponseBody
@@ -77,10 +88,11 @@ public class ApplianceUserController {
     @RequestMapping(value = "user/update/{id}", method = RequestMethod.PUT)
     @ResponseBody
     Users updateUser(@PathVariable("id") Long id, @RequestBody Users user) {
-        user.setId(id);
+        Users userOld= userrepo.findById(id);
+        userOld.setName(user.getName());
+        userOld.setPasscode(user.getPasscode());
         user.setModifiedDate();
-        return userrepo.save(user);
-
+        return userrepo.save(userOld);
     }
 
     @RequestMapping(value = "user/delete/{id}", method = RequestMethod.DELETE)
@@ -88,5 +100,14 @@ public class ApplianceUserController {
     void deleteUser(@PathVariable("id") Long id) {
         userrepo.delete(id);
     }
+
+    @RequestMapping(value = "user/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    Users getU(@PathVariable("id") Long id) {
+        Users user = userrepo.findUser(id);
+        System.out.println(user);
+        return user;
+    }
+
 
 }

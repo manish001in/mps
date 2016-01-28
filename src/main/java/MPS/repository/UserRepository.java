@@ -17,6 +17,11 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository <Users, Long> {
 
+    Users findById(Long id);
+
+    @Query("SELECT u FROM Users u where u.id = :id")
+    Users findUser(@Param("id") Long id);
+
     @Query("SELECT u FROM Users u where u.enterprise = :ent_id")
     List<Users> findUsersByEnt_id(@Param("ent_id") Enterprises ent_id);
 
