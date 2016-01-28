@@ -46,7 +46,6 @@ public class EnterpriseController {
         enterprise.setId(id);
         enterprise.setModifiedDate();
         return enterpriserepo.save(enterprise);
-
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
@@ -57,7 +56,7 @@ public class EnterpriseController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
-    Enterprises get(@PathVariable Long id) {
+    Enterprises get(@PathVariable("id") Long id) {
         Enterprises enterprise=enterpriserepo.findEnterprise(id);
         System.out.println(enterprise);
         return enterprise;

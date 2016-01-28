@@ -1,14 +1,6 @@
-<p>Current Details</p>
-<div>Appliance Name &nbsp; <p>{{appliance.name}}</p> </div>
-<div>Parameter 1 &nbsp; <p>{{appliance.param1}}</p> </div>
-<div>Parameter 2 &nbsp; <p>{{appliance.param2}}</p> </div>
-<div>Parameter 3 &nbsp; <p>{{appliance.param3}}</p> </div>
-
-<br><br>
-
 <p>Updated Details</p>
 <div>Appliance Name &nbsp; <input type="text" ng-model="appliance.name"> </div>
 <div>Parameter 1 &nbsp; <input type="text" ng-model="appliance.param1"> </div>
 <div>Parameter 2 &nbsp; <input type="text" ng-model="appliance.param2"> </div>
 <div>Parameter 3 &nbsp; <input type="text" ng-model="appliance.param3"> </div>
-<div><button ng-click="updateApp()">Save</button>&nbsp;<button ng-click="goBack()">Cancel</button></div>
+<div><button ng-click="updateApp()">Save</button>&nbsp;<button onclick="goBack()">Cancel</button></div>

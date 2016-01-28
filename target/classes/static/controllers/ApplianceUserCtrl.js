@@ -48,18 +48,50 @@ app.controller('ApplianceUserCtrl', ['$scope', 'ApplianceUser','$route', '$locat
             var r = confirm("Do you really want to delete this Appliance at index " + (index+1) + "?");
             if (r == true) {
                 ApplianceUser.removeA(appliance);
-                $scope.components[0].splice(index, 1);
+                var listapp= $scope.components[0];
+                delete listapp[index];
+                $scope.components[0] = listapp;
             } else {}
     };
 
     $scope.deleteU = function(user, index){
-            var r = confirm("Do you really want to delete this Enterprise at index " + (index+1) + "?");
+            var r = confirm("Do you really want to delete this User at index " + (index+1) + "?");
             if (r == true) {
                 ApplianceUser.removeU(user);
-                $scope.components[1].splice(index, 1);
+                var listuser= $scope.components[1];
+                delete listuser[index];
+                $scope.components[1] = listuser;
             } else {}
     };
+    console.log($scope.appliance);
+    $scope.addApp = function(){
+            appliance = $scope.appliance;
+            console.log(appliance);
+          	ApplianceUser.saveA({idd: $route.current.params.id},appliance,function (){});
+           	$scope.appliance = null;
+    };
 
+    $scope.addUser = function(){
+            user = $scope.user;
+           	ApplianceUser.saveU({idd: $route.current.params.id},user,function (){});
+           	$scope.user = null;
+    };
+/*
+    $scope.appliance = ApplianceUser.getA({id: $route.current.params.id});
+    	$scope.updateApp = function(){
+    		console.log($route.current.params.id);
+    		ApplianceUser.updateA($route.current.params.id, $scope.appliance);
+    		$scope.appliance = null;
+    		//$location.path($rootScope.history.view);
+    };
+
+    $scope.user = ApplianceUser.getU({id: $route.current.params.id});
+    	$scope.updateUser = function(){
+    		console.log($route.current.params.id);
+    		ApplianceUser.updateU($route.current.params.id, $scope.user);
+    		$scope.user = null;
+    		//$location.path($rootScope.history.view);
+    };*/
 
 /*
     $scope.add = function(){

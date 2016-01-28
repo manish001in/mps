@@ -26,10 +26,15 @@ app.controller('EnterpriseCtrl', ['$scope', 'Enterprise','$route', '$location','
     } else {}
 	};
 
-	$scope.enterprise = Enterprise.get({id: $route.current.params.id});
+
+
 	$scope.update = function(){
+	    $scope.enterprise = Enterprise.getOne({id: $route.current.params.id}, function (response){
+    	    return response;
+    	});
+    	console.log($scope.enterprise);
 		console.log($route.current.params.id);
-		Enterprise.update($route.current.params.id, $scope.enterprise);
+		Enterprise.update({id : $route.current.params.id}, {enterprise: $scope.enterprise},function (){});
 		$scope.enterprise = null;
 		//$location.path($rootScope.history.view);
 	};

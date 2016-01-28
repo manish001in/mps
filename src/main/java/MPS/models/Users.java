@@ -12,7 +12,6 @@ import java.util.List;
 public class Users {
 
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable=false, unique=true)
@@ -32,7 +31,7 @@ public class Users {
     @Column(name="ModifiedDate")
     private Date modifiedDate;
 
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(/*cascade = {CascadeType.ALL}*/)
     @JoinColumn(name="Enterprises_id", referencedColumnName = "id")
     private Enterprises enterprise;
 
@@ -77,12 +76,14 @@ public class Users {
 
     public Date getCreatedDate() { return createdDate; }
 
+    @PrePersist
     public void setCreatedDate() {
         this.createdDate = new Date();
     }
 
     public Date getModifiedDate() { return modifiedDate; }
 
+    @PreUpdate
     public void setModifiedDate() {
         this.modifiedDate = new Date();
     }

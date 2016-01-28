@@ -16,11 +16,11 @@ app.service('ApplianceUser', ['$resource',
 
                 listAU: {method: 'GET', isArray: true , url : ':id/list', params:{id: '@id'}},
 
-                saveA: {method: 'POST', isArray: false , url : ':id/appliance/add', params:{id: '@id'}},
+                saveA: {method: 'POST', isArray: false , url : ':idd/appliance/add', params:{idd: '@idd'}},
                 removeA: {method: 'DELETE', url:'appliance/delete/:id', params:{id: '@id'}},
                 updateA: {method: 'PUT', url:'appliance/update/:id', params:{id: '@id'}},
 
-                saveU: {method: 'POST', isArray: false , url : ':id/user/add', params:{id: '@id'}},
+                saveU: {method: 'POST', isArray: false , url : ':idd/user/add', params:{idd: '@idd'}},
                 removeU: {method: 'DELETE', url:'user/delete/:id', params:{id: '@id'}},
                 updateU: {method: 'PUT', url:'user/update/:id', params:{id: '@id'}}
             });
