@@ -1,5 +1,8 @@
 package MPS.models;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -31,10 +34,17 @@ public class Users {
     @Column(name="ModifiedDate")
     private Date modifiedDate;
 
-    @ManyToOne(/*cascade = {CascadeType.ALL}*/)
+    @ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinColumn(name="Enterprises_id", referencedColumnName = "id")
+    @OnDelete(action= OnDeleteAction.CASCADE)
     private Enterprises enterprise;
+    public Enterprises getEnterprise() {
+        return enterprise;
+    }
 
+    public void setEnterprise(Enterprises enterprise) {
+        this.enterprise = enterprise;
+    }
 
     public Users() { }
 
@@ -86,14 +96,6 @@ public class Users {
     @PreUpdate
     public void setModifiedDate() {
         this.modifiedDate = new Date();
-    }
-
-    public Enterprises getEnterprise() {
-        return enterprise;
-    }
-
-    public void setEnterprise(Enterprises enterprise) {
-        this.enterprise = enterprise;
     }
 
 
