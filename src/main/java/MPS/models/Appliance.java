@@ -43,9 +43,8 @@ public class Appliance {
     private Date modifiedDate;
 
 
-    @ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @ManyToOne(/*cascade = {CascadeType.REMOVE, CascadeType.REFRESH},*/ fetch = FetchType.LAZY)
     @JoinColumn(name="Enterprises_id", referencedColumnName = "id")
-    @OnDelete(action= OnDeleteAction.CASCADE)
     private Enterprises enterprise;
     public Enterprises getEnterprise() {
         return enterprise;
